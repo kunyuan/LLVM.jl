@@ -20,7 +20,9 @@ include("./Kaleidoscope.jl")
 
     mod = Kaleidoscope.generate_IR(source; ctx=ctx)
     # you can get current context by calling LLVM.context(mod)
+    println("IR before optimization: $mod")
     Kaleidoscope.optimize!(mod)
+    println("IR after optimization: $mod")
 
     ########### to run in julia ###########################
     @dispose engine = Interpreter(mod) begin
