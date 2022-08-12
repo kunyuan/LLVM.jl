@@ -3,3 +3,5 @@
 deps/Manifest.toml
 test/Manifest.toml
 LocalPreferences.toml
+
+.history

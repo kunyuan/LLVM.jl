@@ -13,6 +13,10 @@ using LLVM.Interop
 include("./Kaleidoscope.jl")
 
 ctx = Context()
+
+#you may also use the default context of the current julia session
+# ctx = GlobalContext()
+
 mod = Kaleidoscope.generate_IR(source; ctx=ctx)
 Kaleidoscope.optimize!(mod)
 
